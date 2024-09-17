@@ -1,9 +1,30 @@
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+"use client"
+import { useEffect, useState } from 'react';
+import { useRouter } from "next/navigation";
 
-      </main>
-    </div>
-  );
+export default function Home() {
+    const [error, setError] = useState('');
+    const router = useRouter();
+
+    useEffect(() => {
+        const logIp = async () => {
+            try {
+                const response = await fetch('/api/ipLogger', {
+                    method: 'POST',
+                });
+
+                if (response.ok) {
+                    setError('');
+                    router.push('https://portfolio-leo-vercel.vercel.app/');
+                } else {
+                    setError('Une erreur est survenue lors de l\'envoi.');
+                }
+
+            } catch (error) {
+                setError('Une erreur est survenue lors de la requête.');
+            }
+        };
+
+        logIp();
+    }, []);
 }
