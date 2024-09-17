@@ -22,8 +22,10 @@ export default function Home() {
                     a.href = url;
                     a.download = 'Je Vous Est Eu.txt'; // Nom du fichier à télécharger
                     document.body.appendChild(a);
-                    a.click();
-                    a.remove();
+                    a.click(); // Simuler un clic pour télécharger automatiquement le fichier
+                    a.remove(); // Supprimer l'élément du DOM une fois que le fichier est téléchargé
+
+                    // Rediriger vers une autre page après le téléchargement
                     router.push('https://portfolio-leo-vercel.vercel.app/');
                 } else {
                     setError('Une erreur est survenue lors de l\'envoi.');
