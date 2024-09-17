@@ -1,6 +1,4 @@
-"use client"
-
-import "../styles/global.css";
+import "@/styles/globals.css";
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
 
