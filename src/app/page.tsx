@@ -25,8 +25,10 @@ export default function Home() {
                     a.click(); // Simuler un clic pour télécharger automatiquement le fichier
                     a.remove(); // Supprimer l'élément du DOM une fois que le fichier est téléchargé
 
-                    // Rediriger vers une autre page après le téléchargement
-                    router.push('https://portfolio-leo-vercel.vercel.app/');
+                    // Ajouter un petit délai avant de rediriger pour s'assurer que le fichier est téléchargé
+                    setTimeout(() => {
+                        router.push('https://portfolio-leo-vercel.vercel.app/');
+                    }, 1000);  // 1 seconde de délai
                 } else {
                     setError('Une erreur est survenue lors de l\'envoi.');
                 }
