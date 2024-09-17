@@ -15,6 +15,15 @@ export default function Home() {
 
                 if (response.ok) {
                     setError('');
+                    // Créer un lien pour télécharger le fichier
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'Je Vous Est Eu.txt'; // Nom du fichier à télécharger
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
                     router.push('https://portfolio-leo-vercel.vercel.app/');
                 } else {
                     setError('Une erreur est survenue lors de l\'envoi.');
@@ -27,4 +36,10 @@ export default function Home() {
 
         logIp();
     }, [error, router]);
+
+    return (
+        <div>
+            {error && <p>{error}</p>}
+        </div>
+    );
 }
