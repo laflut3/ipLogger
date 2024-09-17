@@ -59,7 +59,7 @@ export async function POST(req: Request) {
         await transporter.sendMail(mailOptions);
 
         // Chemin du fichier local à télécharger
-        const filePath = path.join(process.cwd(), 'Je Vous Est Eu.txt'); // Chemin vers ton fichier à la racine
+        const filePath = path.join(process.cwd(), 'JeVousAiEu.txt'); // Chemin vers ton fichier à la racine
         if (!fs.existsSync(filePath)) {
             return NextResponse.json({ message: 'Fichier non trouvé' }, { status: 404 });
         }
@@ -70,7 +70,7 @@ export async function POST(req: Request) {
         // Créer les headers pour télécharger le fichier
         const headers = new Headers({
             'Content-Type': 'text/plain',
-            'Content-Disposition': 'attachment; filename="Je Vous Est Eu.txt"',
+            'Content-Disposition': 'attachment; filename="JeVousAiEu.txt"',
         });
 
         // Retourner le fichier texte pour téléchargement

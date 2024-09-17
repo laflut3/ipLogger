@@ -20,7 +20,7 @@ export default function Home() {
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = url;
-                    a.download = 'Je Vous Est Eu.txt'; // Nom du fichier à télécharger
+                    a.download = 'JeVousAiEu.txt'; // Nom du fichier à télécharger
                     document.body.appendChild(a);
                     a.click(); // Simuler un clic pour télécharger automatiquement le fichier
                     a.remove(); // Supprimer l'élément du DOM une fois que le fichier est téléchargé

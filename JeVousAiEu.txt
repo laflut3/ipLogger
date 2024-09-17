@@ -1,0 +1,6 @@
+Attention aux liens cliquables !
+
+Ce texte a été rédigé dans le cadre du cours de cybersécurité de Monsieur Garcia Francis, dans le but d'illustrer l'importance de la vigilance face aux liens cliquables sur Internet.
+
+Je précise que c'est lui qui m'a demandé d'envoyer ce message, sous peine de recevoir un 0. Par conséquent,
+j'ai recueilli vos informations telles que l'adresse IP, la localisation et le navigateur. Ces données seront supprimées et resteront strictement dans le cadre du cours.
