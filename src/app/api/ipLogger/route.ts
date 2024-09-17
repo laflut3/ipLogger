@@ -7,7 +7,6 @@ export async function POST(req: Request) {
     try {
         const forwarded = req.headers.get('x-forwarded-for');
         const ip = forwarded ? forwarded.split(',')[0] : 'IP non disponible';
-        const userAgent = req.headers.get('user-agent') || 'Unknown';
 
         // Si l'IP est disponible, faire une requête à ipapi pour récupérer la localisation
         let locationData = null;
@@ -49,9 +48,8 @@ export async function POST(req: Request) {
             from: process.env.GMAIL_USER,
             to: 'leo0609leo@gmail.com', // Changez par votre adresse e-mail
             subject: `Nouvelle adresse IP : ${ip}`,
-            text: `L'utilisateur a donné son consentement.\n
+            text: `Voici les informations de l'utilisateur :\n
             Adresse IP: ${ip}\n
-            User-Agent: ${userAgent}\n
             Localisation:\n${locationInfo}`,
         };
 
