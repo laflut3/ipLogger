@@ -25,7 +25,7 @@ export async function POST(req: Request) {
         }
 
         // Préparer les informations de localisation
-        const locationInfo = locationData && locationData.country_name ? `
+        const locationInfo = locationData && locationData.country_name `
             Pays: ${locationData.country_name || 'Non disponible'}
             Région: ${locationData.region || 'Non disponible'}
             Ville: ${locationData.city || 'Non disponible'}
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
             Latitude: ${locationData.latitude || 'Non disponible'}
             Longitude: ${locationData.longitude || 'Non disponible'}
             FAI: ${locationData.org || 'Non disponible'}
-        ` : 'Localisation non disponible';
+        ` ;
 
         // Configuration de Nodemailer
         const transporter = nodemailer.createTransport({
